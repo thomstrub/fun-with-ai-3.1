@@ -5,6 +5,7 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import EventIcon from '@mui/icons-material/Event';
+import './App.css';
 
 function TaskList({ onEdit }) {
   const [tasks, setTasks] = useState([]);
@@ -207,16 +208,17 @@ function TaskList({ onEdit }) {
               <Chip
                 label={task.priority || 'P3'}
                 size="small"
+                className="priority-chip selected"
                 sx={{
                   height: 20,
                   fontSize: '0.7rem',
                   fontWeight: 600,
-                  color: 'white',
-                  background: task.priority === 'P1' 
-                    ? 'linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%)'
-                    : task.priority === 'P2' 
-                    ? 'linear-gradient(135deg, #ff9800 0%, #f57c00 100%)'
-                    : 'linear-gradient(135deg, #388e3c 0%, #2e7d32 100%)',
+                  color: '#07F2E6',
+                  background: 'rgba(7, 242, 230, 0.15)',
+                  border: '1px solid #07F2E6',
+                  '& .MuiChip-label': {
+                    color: '#07F2E6'
+                  }
                 }}
               />
               {task.due_date && (

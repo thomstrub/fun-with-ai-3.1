@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Paper, Typography, Box, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import SaveIcon from '@mui/icons-material/Save';
+import './App.css';
 
 function TaskForm({ onSave, initialTask }) {
   const [title, setTitle] = useState(initialTask?.title || '');
@@ -171,24 +172,45 @@ function TaskForm({ onSave, initialTask }) {
             onChange={(e) => setPriority(e.target.value)}
             inputProps={{ 'data-testid': 'priority-select' }}
           >
-            <MenuItem value="P1" sx={{ 
-              color: '#d32f2f', 
+            <MenuItem value="P1" className="priority-select-option" sx={{ 
+              color: priority === 'P1' ? '#07F2E6' : '#7A7A7A',
               fontWeight: 600,
-              '&:hover': { backgroundColor: 'rgba(211, 47, 47, 0.08)' }
+              '&:hover': { 
+                backgroundColor: 'rgba(7, 242, 230, 0.08)',
+                color: '#07F2E6'
+              },
+              '&.Mui-selected': {
+                color: '#07F2E6',
+                backgroundColor: 'rgba(7, 242, 230, 0.1)'
+              }
             }}>
               P1 - High
             </MenuItem>
-            <MenuItem value="P2" sx={{ 
-              color: '#ff9800', 
+            <MenuItem value="P2" className="priority-select-option" sx={{ 
+              color: priority === 'P2' ? '#07F2E6' : '#7A7A7A',
               fontWeight: 600,
-              '&:hover': { backgroundColor: 'rgba(255, 152, 0, 0.08)' }
+              '&:hover': { 
+                backgroundColor: 'rgba(7, 242, 230, 0.08)',
+                color: '#07F2E6'
+              },
+              '&.Mui-selected': {
+                color: '#07F2E6',
+                backgroundColor: 'rgba(7, 242, 230, 0.1)'
+              }
             }}>
               P2 - Medium  
             </MenuItem>
-            <MenuItem value="P3" sx={{ 
-              color: '#388e3c', 
+            <MenuItem value="P3" className="priority-select-option" sx={{ 
+              color: priority === 'P3' ? '#07F2E6' : '#7A7A7A',
               fontWeight: 600,
-              '&:hover': { backgroundColor: 'rgba(56, 142, 60, 0.08)' }
+              '&:hover': { 
+                backgroundColor: 'rgba(7, 242, 230, 0.08)',
+                color: '#07F2E6'
+              },
+              '&.Mui-selected': {
+                color: '#07F2E6',
+                backgroundColor: 'rgba(7, 242, 230, 0.1)'
+              }
             }}>
               P3 - Low
             </MenuItem>

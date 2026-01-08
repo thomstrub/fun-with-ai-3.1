@@ -92,3 +92,37 @@ li:last-child {
   color: #d32f2f;
   font-weight: bold;
 }
+
+/* Priority Item Styles */
+.priority-item {
+  color: #7A7A7A;
+  transition: color 0.2s ease;
+}
+
+.priority-item.selected,
+.priority-item:hover,
+.priority-item:focus {
+  color: #07F2E6;
+}
+
+.priority-chip {
+  color: #7A7A7A;
+  border-color: #7A7A7A;
+}
+
+.priority-chip.selected,
+.priority-chip.active {
+  color: #07F2E6;
+  border-color: #07F2E6;
+  background-color: rgba(7, 242, 230, 0.1);
+}
+
+.priority-select-option {
+  color: #7A7A7A;
+}
+
+.priority-select-option:selected,
+.priority-select-option.selected {
+  color: #07F2E6;
+  background-color: rgba(7, 242, 230, 0.1);
+}
